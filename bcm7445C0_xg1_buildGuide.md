@@ -12,10 +12,10 @@ Please be aware the address of ftp.
 ftp address is ftp://
 
 We need to download the 4 files. So please download the bunch of files.
- -1) comcast_rdk_broadcom_release_rdk2.0_b14.1_20140418_humax.tgz (2.3GB)
- -2) refsw_release_unified_20140324.src.tgz (344MB)
- -3) trellis_release_14.1_20140407.src.tgz (1.9GB)
- -4) trellis_release_14.1_20140407_miracast.tgz (1.4M)
+ - 1) comcast_rdk_broadcom_release_rdk2.0_b14.1_20140418_humax.tgz (2.3GB)
+ - 2) refsw_release_unified_20140324.src.tgz (344MB)
+ - 3) trellis_release_14.1_20140407.src.tgz (1.9GB)
+ - 4) trellis_release_14.1_20140407_miracast.tgz (1.4M)
  
 ###2. make up the files to ready to build
 Before starting the build phase, please untar the 1)file to some directory.
