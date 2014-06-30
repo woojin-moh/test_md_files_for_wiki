@@ -32,6 +32,7 @@ file4) trellis_release_14.1_20140407_miracast.tgz
 ```
 
 2. build 준비하기
+--------------
 
   위에서 제일 먼저 압축을 풀었던 file1)의 데릭토리에 build에 참고할 수 있는 broadcom에서 release한 문서가
 있다(Comcast_RDK2.0-B14.1_Broadcom_release_notes_20140418.pdf). 문서 내에 보면 
@@ -53,6 +54,33 @@ brcm97445vms를 빌드하기 위한 환경 설정 및 command가 나온다. 이것을 참고하여 아래
 
 위처럼 script를 실행시키면 opensource를 download 하는 등의 prepare과정을 하게 된다. prepare 과정이 끝
 나면, build시 발생하는 compile error를 막기 위해 특정 환경 변수를 하나 추가한다. 파일 2개를 수정해야 하는데, 
-파일의 위치는 아래와 같다.
+파일의 위치는 아래와 같다. 각각 파일을 열어 약 785라인 근처에 "export NETAPP_IEEE1905=n"을 추가해 준다.
+
+```
+./rdk/brcm/sdk_xg1/scripts/socbuildscripts/commonEnvMacros
+./rdk/brcm/sdk_xi3/scripts/socbuildscripts/commonEnvMacros
+```
+
+```
+#  NetApp settings
+export NETAPP_BLUETOOTH=n
+export NETAPP_WIFI=n
+export NETAPP_WIFI_P2P=n
+export NETAPP_NFC=n
+export NETAPP_NEXUS=n
+export NETAPP_MIRACAST=n
+export NETAPP_ZEROCONF=n
+export NETAPP_IEEE1905=n 추가
+```
+
+3. build 하기
+------------
+
+  이제 첫 번째 build를 하기 위한 준비를 마쳤다. 아래처럼 script를 실행하여 build를 시작하자.
+
+```
+./build_comcast_rdk_rdk2.0_b14.1.sh bcm97445c -z -c -u -y
+```
+
 
 
